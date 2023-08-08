@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Swagger5._0.Model.User>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.Name_User)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender_User)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Password_User)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Id_Role)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.Name_User)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender_User)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password_User)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id_Role)
+            </td>
+            <td>
+                    <a asp-action="Edit" asp-route-id="@item.Email_User">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Email_User">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Email_User">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
